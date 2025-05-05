@@ -115,6 +115,7 @@ AWS_REGION (us-east-1)
 ECR_REPOSITORY (<your-account-id>.dkr.ecr.<region>.amazonaws.com/hello-world)
 ECS_CLUSTER_NAME (hello-world-cluster)
 ECS_SERVICE_NAME (hello-world-service)
+CONTAINER_NAME (hello-world)
 ```
 
 ### Triggering a Deployment:
