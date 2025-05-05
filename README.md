@@ -22,6 +22,7 @@ ecs-hello-world-monorepo/
 ├── hello-world-app/               # Application code and CI/CD
 │   ├── index.html
 │   ├── Dockerfile
+│   ├── task-definition.json       # ECS Task Definition (used by GitHub Actions)
 │   └── .github/
 │       └── workflows/
 │           └── main.yml           # GitHub Actions workflow
