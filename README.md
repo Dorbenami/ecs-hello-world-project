@@ -171,3 +171,5 @@ To redeploy:
 ---
 
 Enjoy deploying with Terraform & GitHub Actions! 🎉
+
+!PLEASE NOTICE - THIS IS A PRESENTATION REPO - YOU SHOULD SPLIT THE CONTENTS INTO TWO INDIVIDUAL REPOS!
