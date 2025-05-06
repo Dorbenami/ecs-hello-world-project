@@ -8,6 +8,9 @@ This project showcases an end-to-end deployment of a simple "Hello World" web ap
 
 ---
 
+![image](https://github.com/user-attachments/assets/8996ad73-def5-470a-ba67-54e2c34754fd)
+
+
 ## 📦 Project Structure
 
 ```bash
