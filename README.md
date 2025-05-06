@@ -125,8 +125,8 @@ Terraform will output:
 
 ```bash
 cd hello-world-app/
-aws ecr get-login-password --region us-east-1 | \
-  docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region eu-west-1 | \
+  docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.eu-west-1.amazonaws.com
 
 docker build -t hello-world .
 docker tag hello-world:latest <your-ecr-url>:latest
@@ -153,7 +153,7 @@ In your GitHub repo:
 ```
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
-AWS_REGION (us-east-1)
+AWS_REGION (eu-west-1)
 ECR_REPOSITORY (hello-world)
 ECS_CLUSTER_NAME (hello-world-cluster)
 ECS_SERVICE_NAME (hello-world-service)
