@@ -48,7 +48,7 @@ This architecture provides a solid foundation that can be extended to accommodat
 
 ![image](https://github.com/user-attachments/assets/e7af94d2-aa30-4b7c-8f08-a1f156ef5a0c)
 
-
+* Added SNS Notifications & CloudWatch dashboard (outside of sketch)
 
 ## 📦 Project Structure
 
@@ -144,6 +144,7 @@ On every push to `main` in the `hello-world-app` folder:
 * Builds Docker image
 * Pushes to ECR
 * Registers a new ECS Task Definition
+* Run Trivy Scanner to detect vulnerabilities in code
 * Updates the ECS Service to use it
 
 ### Required GitHub Secrets:
