@@ -18,13 +18,14 @@ resource "aws_lb_target_group" "ecs" {
   target_type = "ip" # Required for ECS Fargate (awsvpc network mode)
 
   health_check {
-    path                = "/"
+    path                = "/health"
     protocol            = "HTTP"
-    matcher             = "200-399"
-    interval            = 30
+    port                = "traffic-port"
+    healthy_threshold   = 3
+    unhealthy_threshold = 3
     timeout             = 5
-    healthy_threshold   = 2
-    unhealthy_threshold = 2
+    interval            = 30
+    matcher             = "200,301"
   }
 
   tags = {

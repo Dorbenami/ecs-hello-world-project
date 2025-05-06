@@ -18,7 +18,15 @@ resource "aws_ecs_task_definition" "hello_world" {
           containerPort = var.container_port
           hostPort      = var.container_port
         }
-      ]
+      ],
+
+      healthCheck = {
+        command     = ["CMD-SHELL", "wget -q -O /dev/null http://localhost:80/health || exit 1"]
+        interval    = 30
+        timeout     = 5
+        retries     = 3
+        startPeriod = 60
+      }
     }
   ])
 
