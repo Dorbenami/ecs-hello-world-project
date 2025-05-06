@@ -46,7 +46,8 @@ This project demonstrates adherence to the AWS Well-Architected Framework pillar
 
 This architecture provides a solid foundation that can be extended to accommodate more complex applications while maintaining alignment with AWS best practices.
 
-![image](https://github.com/user-attachments/assets/8996ad73-def5-470a-ba67-54e2c34754fd)
+![image](https://github.com/user-attachments/assets/e7af94d2-aa30-4b7c-8f08-a1f156ef5a0c)
+
 
 
 ## 📦 Project Structure
