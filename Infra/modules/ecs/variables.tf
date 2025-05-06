@@ -45,3 +45,14 @@ variable "container_image" {
   type        = string
   description = "Full container image URI in ECR"
 }
+
+variable "alert_email" {
+  description = "Email address to receive CloudWatch alarm notifications"
+  type        = string
+  default     = "benami.dordor@gmail.com"
+}
+
+variable "aws_region" {
+  description = "AWS region for resources"
+  type        = string
+}

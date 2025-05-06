@@ -30,5 +30,6 @@ module "ecs" {
   app_security_group_id = module.ecs.app_sg_id
   container_image       = "${module.ecs.repository_url}:latest"
   container_port        = var.container_port
+  aws_region            = var.region
 }
 
