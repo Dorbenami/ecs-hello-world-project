@@ -144,6 +144,7 @@ On every push to `main` in the `hello-world-app` folder:
 * Builds Docker image
 * Pushes to ECR
 * Registers a new ECS Task Definition
+* Run Trivy Scanner to detect vulnerabilities in code
 * Updates the ECS Service to use it
 
 ### Required GitHub Secrets:
