@@ -1,7 +1,7 @@
 variable "region" {
   description = "AWS region to deploy resources"
   type        = string
-  default     = "us-east-1"
+  default     = "eu-west-1"
 }
 
 variable "project" {
@@ -35,7 +35,7 @@ variable "private_subnet_cidrs" {
 }
 
 variable "azs" {
-  default = ["us-east-1a", "us-east-1b"]
+  default = ["eu-west-1a", "eu-west-1b"]
 }
 
 variable "cluster_name" {
