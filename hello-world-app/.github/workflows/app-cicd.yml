@@ -37,3 +37,61 @@ jobs:
             --cluster "${{ secrets.ECS_CLUSTER_NAME }}" \
             --service "${{ secrets.ECS_SERVICE_NAME }}" \
             --force-new-deployment
+
+# OPTINAL CI/CD WITH Trivy vulnerability scanner 
+
+# name: Deploy to ECS
+# on:
+#   push:
+#     branches: [ main ]
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+      
+#       - name: Configure AWS credentials
+#         uses: aws-actions/configure-aws-credentials@v2
+#         with:
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           aws-region: ${{ secrets.AWS_REGION }}
+      
+#       - name: Login to Amazon ECR
+#         id: login-ecr
+#         uses: aws-actions/amazon-ecr-login@v1
+      
+#       - name: Build image
+#         env:
+#           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+#           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+#           IMAGE_TAG: latest
+#         run: |
+#           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+      
+#       - name: Run Trivy vulnerability scanner
+#         uses: aquasecurity/trivy-action@master
+#         with:
+#           image-ref: '${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest'
+#           format: 'table'
+#           exit-code: '1'
+#           ignore-unfixed: true
+#           vuln-type: 'os,library'
+#           severity: 'CRITICAL,HIGH'
+      
+#       - name: Push image
+#         env:
+#           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+#           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+#           IMAGE_TAG: latest
+#         run: |
+#           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      
+#       - name: Force ECS deployment
+#         run: |
+#           echo "Forcing new ECS deployment..."
+#           aws ecs update-service \
+#             --cluster "${{ secrets.ECS_CLUSTER_NAME }}" \
+#             --service "${{ secrets.ECS_SERVICE_NAME }}" \
+#             --force-new-deployment

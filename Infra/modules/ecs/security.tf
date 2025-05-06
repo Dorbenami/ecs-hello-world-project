@@ -12,6 +12,10 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+
+  # NOTE: For production environments, this should be restricted to only necessary outbound traffic.
+  # For this demo project, we're allowing all outbound traffic for simplicity.
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -24,6 +28,7 @@ resource "aws_security_group" "alb" {
   }
 }
 
+
 resource "aws_security_group" "ecs_service" {
   name        = "${var.app_name}-ecs-sg"
   description = "Allow traffic from ALB to ECS tasks"
@@ -35,6 +40,12 @@ resource "aws_security_group" "ecs_service" {
     protocol        = "tcp"
     security_groups = [var.alb_security_group_id]
   }
+
+  # NOTE: For production environments, consider restricting outbound traffic to:
+  # - ECR for container images
+  # - CloudWatch for logs
+  # - SSM for parameter store (if used)
+  # - Other specific services your application requires
 
   egress {
     from_port   = 0
