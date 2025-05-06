@@ -13,7 +13,7 @@ output "service_name" {
 output "task_definition_arn" {
   description = "ARN of the ECS task definition"
   value       = aws_ecs_task_definition.hello_world.arn
-} 
+}
 
 output "repository_url" {
   value = aws_ecr_repository.hello_world.repository_url

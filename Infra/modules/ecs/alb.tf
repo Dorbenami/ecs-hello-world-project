@@ -15,7 +15,7 @@ resource "aws_lb_target_group" "ecs" {
   port        = var.container_port
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
-  target_type = "ip"  # Required for ECS Fargate (awsvpc network mode)
+  target_type = "ip" # Required for ECS Fargate (awsvpc network mode)
 
   health_check {
     path                = "/"

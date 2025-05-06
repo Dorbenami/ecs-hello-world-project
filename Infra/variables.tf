@@ -1,3 +1,27 @@
+variable "region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "project" {
+  description = "Project name for resource tagging"
+  type        = string
+  default     = "ecs-hello-world"
+}
+
+variable "environment" {
+  description = "Environment name for resource tagging"
+  type        = string
+  default     = "dev"
+}
+
+variable "owner" {
+  description = "Owner name for resource tagging"
+  type        = string
+  default     = "Dor Ben Ami"
+}
+
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
