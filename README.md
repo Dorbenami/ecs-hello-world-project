@@ -7,6 +7,44 @@ This project showcases an end-to-end deployment of a simple "Hello World" web ap
 * **CI/CD automation** with GitHub Actions that rebuilds and deploys on every push to `main`
 
 ---
+# AWS Well-Architected Pillars Focus
+
+This project demonstrates adherence to the AWS Well-Architected Framework pillars:
+
+## 1. Operational Excellence
+
+* **Infrastructure as Code:** Using Terraform for consistent, repeatable deployments
+* **CI/CD Pipeline:** Automated testing and deployment with GitHub Actions
+* **Monitoring:** CloudWatch alarms for CPU, memory, and task errors
+* **Health Checks:** Application health endpoints and ALB health checks
+
+## 2. Security
+
+* **Network Segmentation:** Public/private subnet architecture
+* **Least Privilege:** IAM roles with specific permissions
+* **Security Groups:** Controlled traffic flow between components
+* **ECR Scanning:** Automatic vulnerability scanning on image push
+
+## 3. Reliability
+
+* **Multi-AZ Deployment:** ECS tasks are distributed across availability zones
+* **Load Balancing:** ALB distributes traffic and routes around failures
+* **Self-healing:** ECS service maintains the desired task count automatically
+* **Health Monitoring:** Proactive detection of issues through health checks
+
+## 4. Performance Efficiency
+
+* **Serverless Containers:** Fargate eliminates the need to provision and manage servers
+* **Right-sizing:** Task definitions with appropriate CPU and memory allocations
+* **Scalability:** Auto-scaling capabilities based on CPU utilization
+
+## 5. Cost Optimization
+
+* **Pay-per-use:** Fargate charges only for resources used
+* **No over-provisioning:** Resources allocated precisely to application needs
+* **Managed Services:** Using AWS managed services reduces operational overhead
+
+This architecture provides a solid foundation that can be extended to accommodate more complex applications while maintaining alignment with AWS best practices.
 
 ![image](https://github.com/user-attachments/assets/8996ad73-def5-470a-ba67-54e2c34754fd)
 
