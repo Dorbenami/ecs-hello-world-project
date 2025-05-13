@@ -54,3 +54,7 @@ variable "container_port" {
   type    = number
   default = 80
 }
+
+variable "alert_email" {
+  default = "benami.dordor@gmail.com"
+}

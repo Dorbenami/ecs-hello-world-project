@@ -31,5 +31,6 @@ module "ecs" {
   container_image       = "${module.ecs.repository_url}:latest"
   container_port        = var.container_port
   aws_region            = var.region
+  alert_email           = var.alert_email
 }
 
